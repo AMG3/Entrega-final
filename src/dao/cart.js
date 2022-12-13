@@ -4,8 +4,6 @@ export class Cart {
 
     this.totalQty = oldCart.totalQty || 0;
 
-    console.log("***** OLD CART", oldCart);
-
     this.totalPrice = oldCart?.totalPrice?.toFixed(2) || 0;
   }
 
@@ -18,7 +16,6 @@ export class Cart {
     storedItem.price = storedItem.item.price * storedItem.qty;
     this.totalQty++;
     this.totalPrice += storedItem.item.price.toFixed(2);
-    console.log("****** TOTAL PRICE", this.totalPrice);
   }
 
   reduceByOne(id) {

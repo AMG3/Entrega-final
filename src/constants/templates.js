@@ -1,7 +1,7 @@
 export const welcomeMessageSubject = "Bienvenido";
 export const welcomeMessageContent = `
 <div>
-    <p>Recibiste un mensaje bonito</p>
+    <p>Registro exitoso</p>
 </div>
 `;
 export const checkoutTemplate = (order) => {
