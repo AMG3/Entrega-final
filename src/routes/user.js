@@ -22,14 +22,5 @@ router.post(
   }),
   userController.handleSignUp
 );
-router.get("/signin", userController.renderSignIn);
-router.post(
-  "/signin",
-  passport.authenticate("local.signin", {
-    failureRedirect: "/user/signin",
-    failureFlash: true,
-  }),
-  userController.handleSignIn
-);
 
 export default router;

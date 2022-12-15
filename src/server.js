@@ -14,6 +14,7 @@ import MongoStore from "connect-mongo";
 
 import cartRoutes from "./routes/index.js";
 import userRoutes from "./routes/user.js";
+import authRoutes from "./routes/auth.js";
 import passport from "./config/passport.js";
 
 const app = express();
@@ -71,7 +72,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/user", userRoutes);
-app.use("/", cartRoutes);
+app.use("/shop", cartRoutes);
+app.use("/", authRoutes);
 
 app.use((req, res, next) => {
   let err = new Error("Página no Encontrada");

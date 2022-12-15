@@ -52,7 +52,7 @@ export async function handleReduceByOne(req, res, next) {
 
   cart.reduceByOne(productId);
   req.session.cart = cart;
-  res.redirect("/shopping-cart");
+  res.redirect("/shop/shopping-cart");
 }
 
 export async function handleRemoveById(req, res, next) {
@@ -61,7 +61,7 @@ export async function handleRemoveById(req, res, next) {
 
   cart.removeItem(productId);
   req.session.cart = cart;
-  res.redirect("/shopping-cart");
+  res.redirect("/shop/shopping-cart");
 }
 
 export async function handleShoppingCart(req, res, next) {
@@ -77,7 +77,7 @@ export async function handleShoppingCart(req, res, next) {
 
 export async function renderCheckout(req, res, next) {
   if (!req.session.cart) {
-    return res.redirect("/shopping-cart");
+    return res.redirect("/shop/shopping-cart");
   }
   const cart = new Cart(req.session.cart);
   const errMsg = req.flash("error")[0];
@@ -90,7 +90,7 @@ export async function renderCheckout(req, res, next) {
 
 export async function handleCheckout(req, res, next) {
   if (!req.session.cart) {
-    return res.redirect("/shopping-cart");
+    return res.redirect("/shop/shopping-cart");
   }
 
   const cart = new Cart(req.session.cart);

@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/shopping-cart/">
+                    <a href="/shop/shopping-cart">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carro
                         <span class="badge">{{session.cart.totalQty}}</span>
                     </a>
@@ -26,10 +26,12 @@
                         {{# if login }}
                             <li><a href="/user/profile">Tu cuenta</a></li>
                             <li role="separator" class="divider"></li>
+                            <li><a href="/shop">Catálogo de productos</a></li>
+                            <li role="separator" class="divider"></li>
                             <li><a href="/user/logout">Logout</a></li>
                         {{ else }}
                             <li><a href="/user/signup">Registro</a></li>
-                            <li><a href="/user/signin">Login</a></li>
+                            <li><a href="/">Login</a></li>
                         {{/if}}
 
                     </ul>
