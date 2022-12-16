@@ -30,7 +30,7 @@ const buildCartItemsTemplate = (cart) => {
   for (const item of Object.entries(cart.items)) {
     template += `
         <tr>
-            <td>${item[1].item.description}</td>
+            <td>${item[1].item.title}</td>
             <td>${item[1].qty}</td>
             <td>${item[1].price}</td>
         </tr>
@@ -43,5 +43,6 @@ const buildCartItemsTemplate = (cart) => {
             <td><strong>${cart.totalPrice}</strong></td>
         </tr>
     </table>`;
+
   return template;
 };
