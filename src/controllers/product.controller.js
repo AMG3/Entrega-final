@@ -84,7 +84,7 @@ export async function handleShoppingCart(req, res, next) {
     return res.render("shop/shopping-cart", { products: null });
   }
   const cart = new Cart(req.session.cart);
-  console.log("***", cart);
+
   res.render("shop/shopping-cart", {
     products: cart.generateArray(),
     totalPrice: cart.totalPrice.toFixed(2),

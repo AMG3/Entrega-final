@@ -13,6 +13,9 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendEmail = async (to, subject, template) => {
+  console.log(process.env.ACCOUNT_GMAIL);
+  console.log(process.env.PASS_ACCOUNT);
+
   let result = await transporter.sendMail({
     from: process.env.ACCOUNT_GMAIL,
     to,

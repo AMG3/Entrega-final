@@ -66,14 +66,11 @@ export async function renderSignIn(req, res, next) {
 }
 
 export async function handleSignIn(req, res, next) {
-  console.log("PAso 1");
   if (req.session.oldUrl) {
-    console.log("PAso 2");
     const oldUrl = req.session.oldUrl;
     req.session.oldUrl = null;
     res.redirect(oldUrl);
   } else {
-    console.log("PAso 3");
     res.redirect("/user/profile");
   }
 }
