@@ -24,9 +24,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const PORT = process.env.PORT || 8080;
 
-const connection = mongoose.connect(
-  "mongodb+srv://test:poligamia12345@cluster0.fxygqmb.mongodb.net/test?retryWrites=true&w=majority"
-);
+const connection = mongoose.connect(process.env.MONGODB_URI);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -34,8 +32,7 @@ app.use(cookieParser());
 app.use(
   session({
     store: MongoStore.create({
-      mongoUrl:
-        "mongodb+srv://test:poligamia12345@cluster0.fxygqmb.mongodb.net/test?retryWrites=true&w=majority",
+      mongoUrl: process.env.MONGODB_URI,
       options: {
         useNewUrlParser: true,
         useUnifiedTopology: true,
