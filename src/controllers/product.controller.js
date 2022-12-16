@@ -4,10 +4,25 @@ import { checkoutTemplate } from "../constants/templates.js";
 import { ProductService } from "../services/product.service.js";
 import { UserService } from "../services/user.service.js";
 import { OrderService } from "../services/order.service.js";
+import Product from "../dao/product.js";
 
 const productService = new ProductService();
 const userService = new UserService();
 const orderService = new OrderService();
+
+export async function addProduct(req, res) {
+  const newProduct = { ...req.body };
+
+  const product = new Product(newProduct);
+  product.save((err, result) => {
+    if (err) {
+      console.error("Error al crear producto", err.message);
+      res.status(400).send({ error: err.message });
+    }
+
+    res.status(201).send(result);
+  });
+}
 
 export async function handleDefault(req, res, next) {
   const successMsg = req.flash("success")[0];

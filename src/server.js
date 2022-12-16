@@ -15,6 +15,7 @@ import MongoStore from "connect-mongo";
 import cartRoutes from "./routes/index.js";
 import userRoutes from "./routes/user.js";
 import authRoutes from "./routes/auth.js";
+import productRoutes from "./routes/product.js";
 import passport from "./config/passport.js";
 
 const app = express();
@@ -71,6 +72,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/product", productRoutes);
 app.use("/user", userRoutes);
 app.use("/shop", cartRoutes);
 app.use("/", authRoutes);
