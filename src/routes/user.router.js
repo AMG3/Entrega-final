@@ -3,7 +3,7 @@ dotenv.config();
 import { Router } from "express";
 import passport from "passport";
 
-import { upload } from "../middlewares/upload.js";
+import { upload } from "../middlewares/upload.middleware.js";
 import { isLoggedIn, notLoggedIn } from "../middlewares/auth.middleware.js";
 import * as userController from "../controllers/user.controller.js";
 

@@ -12,10 +12,10 @@ import session from "express-session";
 import flash from "connect-flash";
 import MongoStore from "connect-mongo";
 
-import cartRoutes from "./routes/index.js";
-import userRoutes from "./routes/user.js";
-import authRoutes from "./routes/auth.js";
-import productRoutes from "./routes/product.js";
+import cartRoutes from "./routes/shop.router.js";
+import userRoutes from "./routes/user.router.js";
+import authRoutes from "./routes/auth.router.js";
+import productRoutes from "./routes/product.router.js";
 import passport from "./config/passport.js";
 
 const app = express();
