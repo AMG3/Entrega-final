@@ -32,7 +32,7 @@ const buildCartItemsTemplate = (cart) => {
         <tr>
             <td>${item[1].item.title}</td>
             <td>${item[1].qty}</td>
-            <td>${item[1].price}</td>
+            <td>$${item[1].price}</td>
         </tr>
     `;
   }
@@ -40,7 +40,7 @@ const buildCartItemsTemplate = (cart) => {
         <tr>
             <td><strong>TOTAL</strong></td>
             <td><strong>${cart.totalQty}</strong></td>
-            <td><strong>${cart.totalPrice}</strong></td>
+            <td><strong>$${cart.totalPrice}</strong></td>
         </tr>
     </table>`;
 

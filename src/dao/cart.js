@@ -4,7 +4,7 @@ export class Cart {
 
     this.totalQty = oldCart.totalQty || 0;
 
-    this.totalPrice = +oldCart?.totalPrice ?? 0;
+    this.totalPrice = oldCart.totalPrice || 0;
   }
 
   add(item, id) {
@@ -14,6 +14,7 @@ export class Cart {
     }
     storedItem.qty++;
     storedItem.price = +storedItem.item.price * storedItem.qty;
+    console.log("***", storedItem);
     this.totalQty++;
     this.totalPrice += storedItem.item.price;
   }
